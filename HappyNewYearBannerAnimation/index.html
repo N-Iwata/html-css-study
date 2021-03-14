@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Happy New Year</title>
+  </head>
+  <body>
+    <section>
+      <h2>Happy New Year<br /><span>2021</span></h2>
+    </section>
+    <script>
+      console.log("s");
+      function stars() {
+        const stars_count = 150;
+        const shootingStars_count = 10;
+        const section = document.querySelector("section");
+        let i = 0;
+
+        while (i < stars_count) {
+          const star = document.createElement("i");
+          star.classList.add("star");
+          const x = Math.floor(Math.random() * window.innerWidth);
+          const y = Math.floor(Math.random() * window.innerHeight);
+          const size = Math.random() * 4;
+          star.style.left = x + "px";
+          star.style.top = y + "px";
+          star.style.width = 1 + size + "px";
+          star.style.height = 1 + size + "px";
+
+          const duration = Math.random() * 2;
+          star.style.animationDuration = 2 + duration + "s";
+          star.style.animationDelay = 2 + duration + "s";
+          if (Math.random() * 100 > 95) {
+            star.style.background = "#ff0";
+          }
+
+          section.appendChild(star);
+          i++;
+        }
+        i = 0;
+        while (i < shootingStars_count) {
+          const shootingStar = document.createElement("i");
+          shootingStar.classList.add("shootingstar");
+          const x = Math.floor(Math.random() * window.innerWidth);
+          const y = Math.floor(Math.random() * window.innerHeight);
+          const size = Math.random() * 4;
+          shootingStar.style.left = x + "px";
+          shootingStar.style.top = y + "px";
+          shootingStar.style.width = 1 + size + "px";
+          shootingStar.style.height = 1 + size + "px";
+
+          const duration = Math.random() * 2;
+          shootingStar.style.animationDuration = 2 + duration + "s";
+          shootingStar.style.animationDelay = 2 + duration + "s";
+          shootingStar.style.background = "#fa0";
+
+          section.appendChild(shootingStar);
+          i++;
+        }
+      }
+      stars();
+    </script>
+  </body>
+</html>
